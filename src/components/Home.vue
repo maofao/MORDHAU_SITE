@@ -10,7 +10,7 @@
       <li><b>колоть и крушить</b></li>
     </ul>
     <p>врагов в эпических битвах.</p>
-    <img src="@/assets/images/mord1.jpg" alt="mord1" width="700" height="400" title="battle 3x3" />
+    <img src="" alt="mord1" width="700" height="400" title="battle 3x3" />
     <p>Какие же особенности есть у этой игры? Их много! Например:</p>
     <ul>
       <li v-for="(feature, index) in features" :key="index">
@@ -22,7 +22,7 @@
       <a href="https://triternion.com" target="_blank">triternion.com</a>
     </p>
     <router-link to="/movement" target="_blank">Весь мувмент в MORDHAU</router-link>
-    <img src="@/assets/images/tr_logo.png" alt="Сайт разработчиков игры" width="300" height="200" />
+    <img src="" alt="Сайт разработчиков игры" width="300" height="200" />
   </div>
 </template>
 

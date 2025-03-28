@@ -1,4 +1,8 @@
 # mordhau-project
+еще вью скачать надо
+npm install vue@latest
+npm install vue-router@4
+
 
 ## СНачала
 ```
