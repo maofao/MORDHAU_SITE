@@ -1,28 +1,30 @@
 <template>
-  <div>
-    <h1>MORDHAU это...</h1>
-    <p>
-      <b>- жестокий и безумно адреналиновый</b>
-      <i>средневековый</i> слэшер, где можно:
-    </p>
-    <ul>
-      <li><b>рубиться</b></li>
-      <li><b>колоть и крушить</b></li>
-    </ul>
-    <p>врагов в эпических битвах.</p>
-    <img src="" alt="mord1" width="700" height="400" title="battle 3x3" />
-    <p>Какие же особенности есть у этой игры? Их много! Например:</p>
-    <ul>
-      <li v-for="(feature, index) in features" :key="index">
-        <h3>{{ feature }}</h3>
-      </li>
-    </ul>
-    <p>
-      Ссылка на сайт разработчиков:
-      <a href="https://triternion.com" target="_blank">triternion.com</a>
-    </p>
-    <router-link to="/movement" target="_blank">Весь мувмент в MORDHAU</router-link>
-    <img src="" alt="Сайт разработчиков игры" width="300" height="200" />
+  <div class="home">
+    <header class="hero">
+      <h1>MORDHAU</h1>
+      <p class="tagline">Жестокий и адреналиновый средневековый слэшер</p>
+      <p class="subtext">Руби, коли и круши врагов в эпических битвах</p>
+      <a-button type="danger" size="large" class="play-button">
+        <router-link to="/movement">Узнать мувмент</router-link>
+      </a-button>
+    </header>
+
+    <section class="features">
+      <h2>Особенности игры</h2>
+      <a-carousel :autoplay="true" dots-class="carousel-dots">
+        <div v-for="(feature, index) in features" :key="index" class="carousel-item">
+          <a-card :hoverable="true" class="feature-card">
+            <template #title>
+              <h3>{{ feature }}</h3>
+            </template>
+          </a-card>
+        </div>
+      </a-carousel>
+    </section>
+
+    <footer class="links">
+      <a href="https://triternion.com" target="_blank" class="dev-link">Сайт разработчиков</a>
+    </footer>
   </div>
 </template>
 
@@ -32,22 +34,13 @@ export default {
   data() {
     return {
       features: [
-        'Реалистичный бой — здесь нет дурацких комбо-кнопок, только физика, тайминг и хитрость.',
-        'Кровавая резня — мечи, топоры, луки и даже кувалды в твоих руках превращаются в орудия кровавого карнавала.',
-        'Кастомизация — создай своего ублюдка-наёмника: от брони до голоса (да, можно орать матом перед атакой).',
-        'Режимы — дуэли, королевские битвы, осады замков и даже строительство баррикад.',
-        'Мемы и троллинг — игроки лютуют: кто-то играет на лютне, пока другие режут друг друга, а кто-то в доспехах гоняется за голыми дезертирами.',
+        'Реалистичный бой — только физика, тайминг и хитрость.',
+        'Кровавая резня — мечи, топоры и кувалды в твоих руках.',
+        'Кастомизация — создай своего наёмника с бронёй и голосом.',
+        'Режимы — дуэли, осады и королевские битвы.',
+        'Мемы и троллинг — лютня, мат и голые дезертиры.',
       ],
     };
   },
 };
 </script>
-
-<style scoped>
-h1 {
-  color: #333;
-}
-ul {
-  list-style-type: square;
-}
-</style>

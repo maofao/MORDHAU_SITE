@@ -1,0 +1,208 @@
+
+$bg-color: #141414;
+$text-color: #fff;
+$subtext-color: #b3b3b3;
+$accent-color: #e50914;
+$card-bg: #2a2a2a;
+$shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+$transition: all 0.3s ease;
+
+:global {
+  
+  --ant-primary-color: #{$accent-color}; 
+  --ant-background-color-base: #{$bg-color}; 
+  --ant-text-color: #{$text-color}; 
+  --ant-card-background: #{$card-bg}; 
+  --ant-border-color-base: #{lighten($bg-color, 10%)};
+}
+
+
+body {
+  background: $bg-color;
+  color: $text-color;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+// Home.vue
+.home {
+  max-width: 1200px;
+  margin: 0 auto;
+
+  .hero {
+    padding: 60px 20px;
+    text-align: center;
+
+    h1 {
+      font-size: 4rem;
+      font-weight: bold;
+      color: $text-color;
+      text-transform: uppercase;
+      margin: 0;
+    }
+
+    .tagline {
+      font-size: 1.8rem;
+      color: $subtext-color;
+      margin: 10px 0;
+    }
+
+    .subtext {
+      font-size: 1.2rem;
+      color: $text-color;
+      margin: 20px 0;
+    }
+
+    .play-button {
+      background: $accent-color;
+      border: none;
+
+      a {
+        color: $text-color;
+        text-decoration: none;
+      }
+
+      &:hover {
+        background: darken($accent-color, 10%);
+        transform: scale(1.05);
+        transition: $transition;
+      }
+    }
+  }
+
+  .features {
+    padding: 0 20px 40px;
+
+    h2 {
+      font-size: 1.8rem;
+      color: $text-color;
+      margin-bottom: 20px;
+    }
+
+    .carousel-item {
+      display: flex;
+      justify-content: center;
+    }
+
+    .feature-card {
+      background: $card-bg;
+      border: none;
+      color: $text-color;
+      width: 300px;
+      transition: $transition;
+
+      &:hover {
+        transform: scale(1.05);
+        box-shadow: $shadow;
+      }
+
+      h3 {
+        margin: 0;
+        font-size: 1.1rem;
+      }
+    }
+
+    .carousel-dots {
+      li button {
+        background: $text-color;
+        opacity: 0.5;
+
+        &.slick-active {
+          opacity: 1;
+          background: $accent-color;
+        }
+      }
+    }
+  }
+
+  .links {
+    padding: 20px;
+    text-align: center;
+
+    .dev-link {
+      color: $accent-color;
+      text-decoration: none;
+      transition: $transition;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+// Movement.vue
+.movement {
+  max-width: 1200px;
+  margin: 0 auto;
+
+  .hero {
+    padding: 60px 20px;
+    text-align: center;
+
+    h1 {
+      font-size: 3.5rem;
+      font-weight: bold;
+      color: $text-color;
+      text-transform: uppercase;
+      margin: 0;
+    }
+
+    .tagline {
+      font-size: 1.5rem;
+      color: $subtext-color;
+      margin: 10px 0;
+    }
+  }
+
+  .category {
+    padding: 0 20px 40px;
+
+    h2 {
+      font-size: 1.8rem;
+      color: $text-color;
+      margin-bottom: 20px;
+    }
+
+    .carousel-item {
+      display: flex;
+      justify-content: center;
+    }
+
+    .movement-card {
+      background: $card-bg;
+      border: none;
+      color: $text-color;
+      width: 250px;
+      text-align: center;
+      padding: 20px;
+      transition: $transition;
+
+      &:hover {
+        transform: scale(1.05);
+        box-shadow: $shadow;
+      }
+
+      &.hands {
+        background: lighten($card-bg, 10%);
+      }
+
+      span {
+        font-size: 1rem;
+      }
+    }
+
+    .carousel-dots {
+      li button {
+        background: $text-color;
+        opacity: 0.5;
+
+        &.slick-active {
+          opacity: 1;
+          background: $accent-color;
+        }
+      }
+    }
+  }
+}
